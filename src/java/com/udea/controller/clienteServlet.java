@@ -16,30 +16,18 @@ public class ClienteServlet extends HttpServlet {
     @EJB
     private ClienteDAO clienteDAO;
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String mensaje="";
         
-        //Se toman las acciones de los botones del formulario cliente      
         String action = request.getParameter("action");
-        //se capturan los datos del formulario cliente
          String cedulaStr = request.getParameter("cedula");
          String cedula = "";
-            //Valida que el campo tenga algun dato
-            if (cedulaStr != null && !cedulaStr.equals("")) 
-            {
-                cedula = cedulaStr;
-            } 
+        if (cedulaStr != null && !cedulaStr.equals("")) 
+        {
+            cedula = cedulaStr;
+        } 
         String nombre = request.getParameter("Nombre");        
         String apellido = request.getParameter("Apellido");
         String direccion = request.getParameter("Direccion");
