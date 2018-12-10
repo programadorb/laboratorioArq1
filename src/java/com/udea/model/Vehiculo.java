@@ -12,87 +12,53 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="vehiculo")
 @NamedQueries(@NamedQuery(name="Vehiculo.getAll",query="SELECT veh FROM Vehiculo veh"))
 public class Vehiculo implements Serializable{
     
+    private static final long serialVersionUID = 1L;
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
     private String matricula;
+    
     @Column
     private String marca;
-    @Column
-    private String Modelo;
-    @Column
-    private String Color;
-    @Column
-    private float Precio;
-    @Column
-    private byte[] foto;
-
-    public Vehiculo(String Matricula, String Marca, String Modelo, String Color, float Precio, byte[] Foto) {
-        this.matricula = Matricula;
-        this.marca = Marca;
-        this.Modelo = Modelo;
-        this.Color = Color;
-        this.Precio = Precio;
-        this.foto = Foto;
-    }
-
-    public Vehiculo() {
-    }
-
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(String Matricula) {
-        this.matricula = Matricula;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String Marca) {
-        this.marca = Marca;
-    }
-
-    public String getModelo() {
-        return Modelo;
-    }
-
-    public void setModelo(String Modelo) {
-        this.Modelo = Modelo;
-    }
-
-    public String getColor() {
-        return Color;
-    }
-
-    public void setColor(String Color) {
-        this.Color = Color;
-    }
-
-    public float getPrecio() {
-        return Precio;
-    }
-
-    public void setPrecio(float Precio) {
-        this.Precio = Precio;
-    }
-
-    public byte[] getFoto() {
-        return foto;
-    }
-
-    public void setFoto(byte[] Foto) {
-        this.foto = Foto;
-    }
-
     
+    @Column
+    private String modelo;
     
+    @Column
+    private String color;
     
+    @Column
+    private float precio;
     
+    @Column
+    private String foto;    
+    
+    public Vehiculo(){}
+
+    public void setMatricula(String matricula){this.matricula=matricula;}
+    public String getMatricula(){return this.matricula;}
+
+
+    public void setMarca(String marca){this.marca=marca;}
+    public String getMarca(){return this.marca;}
+
+
+    public void setModelo(String modelo){this.modelo=modelo;}
+    public String getModelo(){return this.modelo;}
+
+
+    public void setColor(String color){this.color=color;}
+    public String getColor(){return this.color;}
+
+
+    public void setPrecio(float precio){this.precio=precio;}
+    public float getPrecio(){return this.precio;}
+
+
+    public void setFoto(String foto){this.foto=foto;}
+    public String getFoto(){return this.foto;}
+
 }

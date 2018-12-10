@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    
     <servlet>
-        <servlet-name>concesionarioServlet</servlet-name>
-        <servlet-class>com.udea.controller.concesionarioServlet</servlet-class>
+        <servlet-name>ClienteServlet</servlet-name>
+        <servlet-class>com.udea.controller.ClienteServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>clienteServlet</servlet-name>
-        <servlet-class>com.udea.controller.clienteServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>vehiculoServlet</servlet-name>
-        <servlet-class>com.udea.controller.vehiculoServlet</servlet-class>
+        <servlet-name>VehiculoServlet</servlet-name>
+        <servlet-class>com.udea.controller.VehiculoServlet</servlet-class>
         <multipart-config>
             <location>/tmp</location>
             <max-file-size>20848820</max-file-size>
@@ -18,33 +15,24 @@
             <file-size-threshold>1048576</file-size-threshold>
         </multipart-config>
     </servlet>
+    
     <servlet>
-        <servlet-name>vendedorServlet</servlet-name>
-        <servlet-class>com.udea.controller.vendedorServlet</servlet-class>
+        <servlet-name>VentasServlet</servlet-name>
+        <servlet-class>com.udea.controller.VentasServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>ventasServlet</servlet-name>
-        <servlet-class>com.udea.controller.ventasServlet</servlet-class>
-    </servlet>
+    
     <servlet-mapping>
-        <servlet-name>concesionarioServlet</servlet-name>
-        <url-pattern>/concesionarioServlet</url-pattern>
+        <servlet-name>ClienteServlet</servlet-name>
+        <url-pattern>/ClienteServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>clienteServlet</servlet-name>
-        <url-pattern>/clienteServlet</url-pattern>
+        <servlet-name>VehiculoServlet</servlet-name>
+        <url-pattern>/VehiculoServlet</url-pattern>
     </servlet-mapping>
+    
     <servlet-mapping>
-        <servlet-name>vehiculoServlet</servlet-name>
-        <url-pattern>/vehiculoServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>vendedorServlet</servlet-name>
-        <url-pattern>/vendedorServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ventasServlet</servlet-name>
-        <url-pattern>/ventasServlet</url-pattern>
+        <servlet-name>VentasServlet</servlet-name>
+        <url-pattern>/VentasServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

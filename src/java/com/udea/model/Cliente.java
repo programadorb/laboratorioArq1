@@ -1,4 +1,3 @@
-
 package com.udea.model;
 
 import java.io.Serializable;
@@ -12,74 +11,47 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="cliente")
 @NamedQueries(@NamedQuery(name="Cliente.getAll",query="SELECT c FROM Cliente c"))
 public class Cliente implements Serializable{
     
-     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @Column 
     private String cedula;
-    @Column
-    private String Nombre;
-    @Column
-    private String Apellido;
-    @Column
-    private String Direccion;
-    @Column
-    private String Telefono;
-
-    public Cliente(String Cedula, String Nombre, String Apellido, String Direccion, String Telefono) {
-        this.cedula = Cedula;
-        this.Nombre = Nombre;
-        this.Apellido = Apellido;
-        this.Direccion = Direccion;
-        this.Telefono = Telefono;
-    }
-
-    public Cliente() {
-    }
-
-    public String getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(String Cedula) {
-        this.cedula = Cedula;
-    }
-
-    public String getNombre() {
-        return Nombre;
-    }
-
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
-    }
-
-    public String getApellido() {
-        return Apellido;
-    }
-
-    public void setApellido(String Apellido) {
-        this.Apellido = Apellido;
-    }
-
-    public String getDireccion() {
-        return Direccion;
-    }
-
-    public void setDireccion(String Direccion) {
-        this.Direccion = Direccion;
-    }
-
-    public String getTelefono() {
-        return Telefono;
-    }
-
-    public void setTelefono(String Telefono) {
-        this.Telefono = Telefono;
-    }
     
+    @Column 
+    private String nombre;
     
+    @Column 
+    private String apellido;
     
+    @Column 
+    private String direccion;
+    
+    @Column 
+    private String telefono;
+
+    public Cliente() {}
+
+    public void setCedula(String cedula){this.cedula=cedula;}
+    public String getCedula(){return this.cedula;}
+
+
+    public void setNombre(String nombre){this.nombre=nombre;}
+    public String getNombre(){return this.nombre;}
+
+
+    public void setApellido(String apellido){this.apellido=apellido;}
+    public String getApellido(){return this.apellido;}
+
+
+    public void setDireccion(String direccion){this.direccion=direccion;}
+    public String getDireccion(){return this.direccion;}
+
+
+    public void setTelefono(String telefono){this.telefono=telefono;}
+    public String getTelefono(){return this.telefono;}
+
 }
+   

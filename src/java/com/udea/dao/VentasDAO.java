@@ -1,7 +1,6 @@
-
 package com.udea.dao;
 
-import com.udea.model.Ventas_generales;
+import com.udea.model.Venta;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -9,33 +8,28 @@ import javax.persistence.PersistenceContext;
 
 
 @Stateless
-public class VentasDAO implements VentasDAOLocal {
+public class VentasDAO {
 
     @PersistenceContext
     private EntityManager em;
     
-   @Override
-    public void addVenta(Ventas_generales venta) {
+    public void addVenta(Venta venta) {
         em.persist(venta);
     }
 
-    @Override
-    public void editVenta(Ventas_generales venta) {
+    public void editVenta(Venta venta) {
         em.merge(venta);
     }
 
-    @Override
     public void deleteVenta(String ventaID) {
         em.remove(getVenta(ventaID));
     }
-
-    @Override
-    public Ventas_generales getVenta(String ventaID) {
-        return em.find(Ventas_generales.class, ventaID);
+    
+    public Venta getVenta(String ventaID) {
+        return em.find(Venta.class, ventaID);
     }
-
-    @Override
-    public List<Ventas_generales> getAllVentas() {
+    
+    public List<Venta> getAllVentas() {
         return em.createNamedQuery("Ventas.getAll").getResultList();
     }
 }
