@@ -14,7 +14,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table
 @NamedQueries(@NamedQuery(name="Ventas.getAll",query="SELECT ven FROM Venta ven"))
 public class Venta implements Serializable{
     private static final long serialVersionUID = 1L;

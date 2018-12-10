@@ -3,11 +3,13 @@ package com.udea.dao;
 import com.udea.model.Venta;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.ejb.LocalBean;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 
 @Stateless
+@LocalBean
 public class VentasDAO {
 
     @PersistenceContext
